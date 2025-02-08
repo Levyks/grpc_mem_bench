@@ -21,6 +21,10 @@ struct GrpcMemBenchServiceImpl;
 
 #[tonic::async_trait]
 impl GrpcMemBenchService for GrpcMemBenchServiceImpl {
+    async fn health_check(&self, _: Request<()>) -> Result<Response<()>, Status> {
+        Ok(Response::new(()))
+    }
+
     type ServerStreamStream = PingIntervalStream;
 
     async fn server_stream(&self, request: Request<PingWithInterval>) -> Result<Response<Self::ServerStreamStream>, Status> {

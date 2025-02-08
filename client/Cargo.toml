@@ -1,0 +1,21 @@
+[package]
+name = "grpc_mem_bench_client"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.95"
+clap = { version = "4.5.28", features = ["derive"] }
+docker-api = "0.14.0"
+log = "0.4.25"
+pretty_env_logger = "0.5.0"
+prost = "0.13.4"
+prost-types = "0.13.4"
+tokio = { version = "1.43.0", features = ["macros", "rt-multi-thread", "signal"] }
+tokio-stream = "0.1.17"
+tonic = { version = "0.12.3", features = ["channel"] }
+rand = "0.9.0"
+humantime = "2.1.0"
+
+[build-dependencies]
+tonic-build = "0.12.3"

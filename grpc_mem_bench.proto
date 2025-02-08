@@ -19,6 +19,7 @@ message Pong {
 }
 
 service GrpcMemBenchService {
+  rpc HealthCheck (google.protobuf.Empty) returns (google.protobuf.Empty) {}
   rpc ServerStream (PingWithInterval) returns (stream Pong) {}
   rpc BiDirectionalStream (stream Ping) returns (stream Pong) {}
 }

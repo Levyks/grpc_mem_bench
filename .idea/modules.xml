@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/client/client.iml" filepath="$PROJECT_DIR$/client/client.iml" />
       <module fileurl="file://$PROJECT_DIR$/grpc_mem_bench.iml" filepath="$PROJECT_DIR$/grpc_mem_bench.iml" />
       <module fileurl="file://$PROJECT_DIR$/rust_tonic/rust_tonic.iml" filepath="$PROJECT_DIR$/rust_tonic/rust_tonic.iml" />
     </modules>
