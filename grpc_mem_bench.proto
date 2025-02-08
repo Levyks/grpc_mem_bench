@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package grpc_mem_bench;
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+message Ping {
+    string message = 1;
+}
+
+message PingWithInterval {
+    string message = 1;
+    int32 interval = 2;
+}
+
+message Pong {
+    string message = 1;
+    google.protobuf.Timestamp timestamp = 2;
+}
+
+service GrpcMemBenchService {
+  rpc ServerStream (PingWithInterval) returns (stream Pong) {}
+  rpc BiDirectionalStream (stream Ping) returns (stream Pong) {}
+}
